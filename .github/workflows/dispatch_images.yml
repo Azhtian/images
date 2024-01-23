@@ -15,12 +15,12 @@ jobs:
       # Your image processing steps go here
 
       - name: Trigger Web Repository Dispatch
-      - env:
-          GH_TOKEN: ${{ secrets.PAT_FOR_WEB_REPO }}
         run: |
           curl --request POST \
             --url https://api.github.com/repos/Azhtian/image-page/dispatches \
             --header "Authorization: Bearer $GH_TOKEN" \
             --header "Accept: application/vnd.github.everest-preview+json" \
             --data '{"event_type": "image_updated"}'
+      - env:
+          GH_TOKEN: ${{ secrets.PAT_FOR_WEB_REPO }}
         
