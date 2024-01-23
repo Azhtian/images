@@ -21,5 +21,5 @@ jobs:
           --header "Authorization: Bearer $GH_TOKEN" \
           --header "Accept: application/vnd.github.everest-preview+json" \
           --data '{"event_type": "image_updated"}'
-      - env:
+        env:
           GH_TOKEN: ${{ secrets.PAT_FOR_WEB_REPO }}
